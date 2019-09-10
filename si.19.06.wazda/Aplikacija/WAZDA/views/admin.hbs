@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WAZDA - Web aplikacija za delegiranje arbitara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- css -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/jcarousel.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Theme skin -->
+    <link href="skins/default.css" rel="stylesheet" />
+    <!-- Fav and touch icons -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link rel="shortcut icon" type="image/png" href="img/logo/FSN Logo.png" />
+  </head>
+
+  <body>
+    <div id="wrapper" class="boxed">
+      <!-- toggle top area -->
+      <div class="hidden-top">
+        <div class="hidden-top-inner container">
+          <div class="row">
+            <div class="span12" style="text-align:center">
+              <ul>
+                <li><strong>Kontaktiraj nas na:</strong></li>
+                <li>Sedište: Trg Pavla Stojkovića 10, 18000 Niš</li>
+                <li>Tel/faks: <i class="icon-phone"></i>018/516-605</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end toggle top area -->
+      <!-- start header -->
+      <header>
+        <div class="container">
+          <!-- hidden top area toggle link -->
+          <div id="header-hidden-link">
+            <a
+              href="#"
+              class="toggle-link"
+              title="Click me you'll get a surprise"
+              data-target=".hidden-top"
+              ><i></i>Open</a
+            >
+          </div>
+          <!-- end toggle link -->
+          <div class="row nomargin">
+            <div class="span12">
+              <div class="headnav">
+                <ul>
+                  <!-- <li><a href="#mySignup" data-toggle="modal"><i class="icon-user"></i> Sign up</a></li> -->
+                  <li>
+                    <a href="/logout" data-toggle="modal">Odjavi se</a>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="span4">
+              <div class="logo">
+                <a href="http://localhost:3000/"
+                  ><img
+                    src="img/fsn.jpg"
+                    alt=""
+                    class="logo"
+                    style="height:100px;"
+                /></a>
+                <h1><strong>Fudbalski savez Niša</strong></h1>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="navbar navbar-static-top">
+                <div class="navigation">
+                  <nav>
+                    <ul class="nav topnav">
+                        <li class="dropdown active">
+                            <a href="#">Profil</a>
+                          </li>
+                      <li class="dropdown">
+                        <a href="http://localhost:3000/">Početna</a>
+                      </li>
+                      <li>
+                        <a href="http://localhost:3000/onama">O nama</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="http://localhost:3000/listaSudija">Sudije <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a href="http://localhost:3000/organizacija">Organizacija sudija</a>
+                          </li>
+                          <li><a href="http://localhost:3000/listaSudija">Lista sudija</a></li>
+                          <li><a href="http://localhost:3000/dokumenta">Dokumenti</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="http://localhost:3000/delegati">Delegati</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#">Lige <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="http://localhost:3000/prvaLiga">Prva niška liga</a></li>
+                          <li>
+                            <a href="http://localhost:3000/drugaLiga">Druga Niška liga</a>
+                          </li>
+                          <li><a href="http://localhost:3000/mladjaLiga">Mlađe kategorije</a></li>
+                          <li><a href="http://localhost:3000/cicibani">Cicibani</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="http://localhost:3000/tereni">Tereni</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- end navigation -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+      <section id="inner-headline">
+        <div class="container">
+          <div class="row">
+            <div class="span4">
+              <div class="inner-heading">
+                <h2>Admin</h2>
+              </div>
+            </div>
+            <div class="span8">
+              <ul class="breadcrumb">
+                <li>
+                  <a href="http://localhost:3000/"><i class="icon-home"></i></a
+                  ><i class="icon-angle-right"></i>
+                </li>
+                <li class="active">Adim</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br>
+      <br>
+      <section>
+            <!--ovaa-->
+            <div class="span12">
+                    <h4><i class="icon-plus-sign icon-48"></i>Kreiranje <strong>clanova saveza</strong></h4>
+                    <div class="tabbable tabs-left">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#topone" data-toggle="tab"><i class="icon-flag"></i>Kreiranje <strong>sudije</strong></a></li>
+                        <li><a href="#toptwo" data-toggle="tab"><i class="icon-user"></i>Kreiranje <strong>delegata</strong></a></li>
+                        <li><a href="#topthree" data-toggle="tab"><i class="icon-briefcase"></i>Kreiranje <strong>sekretara</strong></a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="topone">
+                            <h3><i class="icon-flag icon-48"></i>Kreiraj sudiju</h3>
+                            <form style="display: flex; flex-direction: row">
+                            <span style="display:flex; flex-direction: column; width:30%">
+                                <label style="margin: 10px; font-size: 15px">Username:  </label> 
+                                <label style="margin: 10px; font-size: 15px">Password:  </label>
+                                <label style="margin: 10px; font-size: 15px">Ime:  </label> 
+                                <label style="margin: 10px; font-size: 15px">Prezime:  </label>
+                                <label style="margin: 10px; font-size: 15px">Godina rođenja:  </label>
+                                <label style="margin: 10px; font-size: 15px">Broj telefona:  </label>
+                                <label style="margin: 10px; font-size: 15px">Email:  </label>
+                              </span>
+                            <div style="display:flex; flex-direction: column; margin-right: 20px">
+                                <input type="text" id="usernameSudije" placeholder="Username" />
+                                <input type="text" id="passwordSudije" placeholder="Password" />
+                                <input type="text" id="imeSudije" placeholder="Ime" />
+                                <input type="text" id="prezimeSudije"  placeholder="Prezime"  />
+                                <select id="godinaRod" ></select>
+                                <input type="text" id="telefonSudije"  placeholder="Broj telefona"  />
+                                <input type="text" id="emailSudije"  placeholder="Email"  />
+                              </div>
+                              <span style="display:flex; flex-direction: column; width:40%">
+                                  <label style="margin: 10px; font-size: 15px">URL slike:  </label>
+                                  <label style="margin: 10px; font-size: 15px">Reg. broj saveza:  </label>
+                                  <label style="margin: 10px; font-size: 15px">God. početka suđenja:  </label>
+                                  <label style="margin: 10px; font-size: 15px">Username sekretara:  </label>
+                                  <label style="margin: 10px; font-size: 15px">Liga:  </label>
+                                  <label style="margin: 10px; font-size: 15px">Opis:  </label>
+                                </span>
+                            <div style="width:700px; display:flex; flex-direction: column;">
+                                <input type="text" id="slikaSudije"  placeholder="URL slike"  />
+                                <input type="text" id="regBrSavezaSudije"  placeholder="Registracioni broj saveza"  />
+                                <select id="godinaSud"></select>
+                                <input type="text" id="usernameSekretaraSudije"  placeholder="Username sekretara"  />
+                                <div style="display:flex; flex-direction: row; margin:10px">
+                                    <input type="radio" name="liga" value="Prva Niska" style="margin-left:10px; margin-right: 5px"/> I liga 
+                                    <input type="radio" name="liga" value="Druga Niska" style="margin-left:10px; margin-right: 5px"/>  II liga
+                                    <input type="radio" name="liga" value="Mladje Kategorije" style="margin-left:10px; margin-right: 5px"/> Mlađe kategorije 
+                                    <input type="radio" name="liga" value="Cicibani" style="margin-left:10px; margin-right: 5px"/> Cicibani 
+                                </div>
+                                <textarea id="opisSudije" aria-placeholder="Opis.."></textarea>
+                            </div>
+                        </form>
+                        <button class="btn btn-inverse btn-medium" id="kreirajSudiju" >Prosledi podatke</button>
+                        </div>
+                        <div class="tab-pane" id="toptwo">
+                            <h3><i class="icon-user icon-48"></i>Kreiraj delegata</h3>
+                            <form style="display: flex; flex-direction: row">
+                            <span style="display:flex; flex-direction: column">
+                                <label style="margin: 10px; font-size: 15px">Username:  </label> 
+                                <label style="margin: 10px; font-size: 15px">Password:  </label>
+                                <label style="margin: 10px; font-size: 15px">Ime:  </label> 
+                                <label style="margin: 10px; font-size: 15px">Prezime:  </label>
+                                <label style="margin: 10px; font-size: 15px">Godina rođenja:  </label>
+                                <label style="margin: 10px; font-size: 15px">Username sekretara:  </label>
+                                
+                            </span>
+                            <div style=" display:flex; flex-direction: column;">
+                                <input type="text" id="usernameDelegata" placeholder="Username"/>
+                                <input type="text" id="passwordDelegata" placeholder="Password" />
+                                <input type="text" id="imeDelegata" placeholder="Ime"  />
+                                <input type="text" id="prezimeDelegata"  placeholder="Prezime"  />
+                                <select id="godinaRodDelegata"></select>
+                                <input type="text" id="usernameSekretaraDelegata"  placeholder="Username sekretara"  />
+                            </div>
+                            <span style="display:flex; flex-direction: column">
+                                <label style="margin: 10px; font-size: 15px">Broj telefona:  </label>
+                                <label style="margin: 10px; font-size: 15px">Email:  </label>
+                                <label style="margin: 10px; font-size: 15px">URL slike:  </label>
+                                <label style="margin: 10px; font-size: 15px">Reg. broj saveza:  </label>
+                                <label style="margin: 10px; font-size: 15px">Opis:  </label>
+                            </span>
+                        <div style=" display:flex; flex-direction: column;">
+                                <input type="text" id="telefonDelegata"  placeholder="Broj telefona"  />
+                                <input type="text" id="emailDelegata"  placeholder="Email"  />
+                                <input type="text" id="slikaDelegata"  placeholder="URL slike"  />
+                                <input type="text" id="regBrSavezaDelegata"  placeholder="Registracioni broj saveza"  />
+                                <textarea id="opisDelegata" placeholder="Opis.."></textarea>
+                        </div>
+                    </form>
+                    <button class="btn btn-inverse btn-medium" id="kreirajDelegata">Prosledi podatke</button>
+                </div>
+                        <div class="tab-pane" id="topthree">
+                            <h3><i class="icon-briefcase icon-48"></i>Kreiraj sekretara</h3>
+                          <form style="display: flex; flex-direction: row">
+                                <span style="display:flex; flex-direction: column">
+                                        <label style="margin: 10px; font-size: 15px">Username:  </label> 
+                                        <label style="margin: 10px; font-size: 15px">Password:  </label>
+                                        <label style="margin: 10px; font-size: 15px">Ime:  </label> 
+                                        <label style="margin: 10px; font-size: 15px">Prezime:  </label>
+                                        <label style="margin: 10px; font-size: 15px">Godina rođenja:  </label>
+                                        <label style="margin: 10px; font-size: 15px">Broj telefona:  </label>
+                                </span>
+                                <div style="display:flex; flex-direction: column;">
+                                    <input type="text" id="usernameSekretara" placeholder="Username"/>
+                                    <input type="text" id="passwordSekretara" placeholder="Password" />
+                                    <input type="text" id="imeSekretara" placeholder="Ime"  />
+                                    <input type="text" id="prezimeSekretara"  placeholder="Prezime"  />
+                                    <select id="godinaRodSekretara"></select>
+                                    <input type="text" id="telefonSekretara"  placeholder="Broj telefona"  />
+                                </div>
+                                <span style="display:flex; flex-direction: column">
+                                        <label style="margin: 10px; font-size: 15px">Email:  </label>
+                                        <label style="margin: 10px; font-size: 15px">URL slike:  </label>
+                                        <label style="margin: 10px; font-size: 15px">Reg. broj saveza:  </label>
+                                        <label style="margin: 10px; font-size: 15px">Opis:  </label>
+                                </span>
+                                <div style="display:flex; flex-direction: column;">
+                                        <input type="text" id="emailSekretara"  placeholder="Email"  />
+                                        <input type="text" id="slikaSekretara"  placeholder="URL slike"  />
+                                        <input type="text" id="regBrSavezaSekretara"  placeholder="Registracioni broj saveza"  />
+                                        <textarea id="opisSekretara" placeholder="Opis.."></textarea>
+                                </div>
+                            </form>
+                            <button class="btn btn-inverse btn-medium" id="kreirajSekretara">Prosledi podatke</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end tab -->
+                  </div>
+      </section>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
+      <br>
+      <section>
+            <div class="row">
+                    <div class="span12">
+                      <h4><i class="icon-minus-sign icon-48"></i> Brisanje <strong>clanova saveza</strong></h4>
+                      <div class="tabbable tabs-right">
+                        <ul class="nav nav-tabs">
+                          <li class="active"><a id="kreirajSudiju" href="#first" data-toggle="tab"><i class="icon-flag"></i> Obrisi <strong>sudiju</strong></a></li>
+                          <li><a href="#second" data-toggle="tab"><i class="icon-user"></i>Obrisi <strong>delegata</strong></a></li>
+                          <li><a href="#third" data-toggle="tab"><i class="icon-briefcase"></i>Obrisi <strong>sekretara</strong></a></li>
+                        </ul>
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="first">
+                              <h3><i class="icon-flag icon-48"></i>Brisanje sudije</h3>
+                              <form style="display: flex; flex-direction: row">
+                                    <h5 style="margin-right: 10px">Uneti <strong>username</strong> sudije kog želite obrisati: </h5><input type="text" id="usernameSudijeBrisanje" placeholder="Username">
+                              </form>
+                              <button class="btn btn-inverse btn-medium" id="obrisiSudiju">Obrisi sudiju</button>
+                          </div>
+                          <div class="tab-pane" id="second">
+                              <h3><i class="icon-user icon-48"></i>Brisanje delegata</h3>
+                                <form style="display: flex; flex-direction: row">
+                                        <h5 style="margin-right: 10px">Uneti <strong>username</strong> delegata kog želite obrisati: </h5><input type="text" id="usernameDelegataBrisanje" placeholder="Username">
+                                  </form>
+                                  <button class="btn btn-inverse btn-medium" id="obrisiDelegata">Obrisi delegata</button>
+                          </div>
+                          <div class="tab-pane" id="third">
+                              <h3><i class="icon-briefcase icon-48"></i>Brisanje sekretara</h3>
+                                <form style="display: flex; flex-direction: row">
+                                        <h5 style="margin-right: 10px">Uneti <strong>username</strong> sekretara kog želite obrisati: </h5><input type="text" id="usernameSekretaraBrisanje" placeholder="Username">
+                                  </form>
+                                  <button class="btn btn-inverse btn-medium" id="obrisiSekretara">Obrisi sekretara</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+      </section>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
+      <br>
+      <section>
+          <div class="row">
+                  <div class="span12">
+                    <h4><i class="icon-spinner icon-48"></i> Ažuriranje <strong>clanova saveza</strong></h4>
+                    <div class="tabbable tabs-right">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a id="kreirajSudiju" href="#first2" data-toggle="tab"><i class="icon-flag"></i> Ažuriraj <strong>sudiju</strong></a></li>
+                        <li><a href="#second2" data-toggle="tab"><i class="icon-user"></i>Ažuriraj <strong>delegata</strong></a></li>
+                        <li><a href="#third2" data-toggle="tab"><i class="icon-briefcase"></i>Ažuriraj <strong>sekretara</strong></a></li>
+                      </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="first2">
+                          <h3><i class="icon-flag icon-48"></i>Ažuriranje sudije</h3>
+                            <form style="display: flex; flex-direction: row">
+                                <span style="display:flex; flex-direction: column">
+                                    <label style="margin: 10px; font-size: 15px">ID Sudije:  </label> 
+                                    <label style="margin: 10px; font-size: 15px">Novi username:  </label> 
+                                    <label style="margin: 10px; font-size: 15px">Novi password:  </label>
+                                    <label style="margin: 10px; font-size: 15px">Novo zvanje:  </label>
+                                    <label style="margin: 10px; font-size: 15px">Nova slika:  </label>
+                                    <label style="margin: 10px; font-size: 15px">Ime lige:  </label>
+                                    <label style="margin: 10px; font-size: 15px">Clanarina:  </label>
+                            </span>
+                            <div style="display:flex; flex-direction: column;">
+                                <input type="text" id="azurirajIdSudije" placeholder="ID sudije"/>
+                                <input type="text" id="azurirajUsernameSudije" placeholder="Username"/>
+                                <input type="text" id="azurirajPasswordSudije" placeholder="Password" />
+                                <input type="text" id="azurirajZvanjeSudije" placeholder="Zvanje"  />
+                                <input type="text" id="azurirajSlikuSudije" placeholder="URL slike"/>
+                                <div style="display:flex; flex-direction: row; margin-top:10px">
+                                    <input type="radio" name="azurirajLigu" value="Prva Niska" style="margin-left:10px; margin-right: 5px"/> I liga 
+                                    <input type="radio" name="azurirajLigu" value="Druga Niska" style="margin-left:10px; margin-right: 5px"/>  II liga
+                                    <input type="radio" name="azurirajLigu" value="Mladje Kategorije" style="margin-left:10px; margin-right: 5px"/> Mlađe kategorije 
+                                    <input type="radio" name="azurirajLigu" value="Cicibani" style="margin-left:10px; margin-right: 5px"/> Cicibani 
+                                </div>
+                                <input type="checkbox" id="clanarinaSudije" style="margin-top:20px"/> 
+                                
+                            </div>
+                            </form>
+                            <button class="btn btn-inverse btn-medium" id="azurirajSudiju">Ažuriraj sudiju</button>
+                        </div>
+                        <div class="tab-pane" id="second2">
+                            <h3><i class="icon-user icon-48"></i>Ažuriranje delegata</h3>
+                              <form style="display: flex; flex-direction: row">
+                                  <span style="display:flex; flex-direction: column">
+                                      <label style="margin: 10px; font-size: 15px">ID Delegata:  </label> 
+                                      <label style="margin: 10px; font-size: 15px">Novi username:  </label> 
+                                      <label style="margin: 10px; font-size: 15px">Novi password:  </label>
+                                      <label style="margin: 10px; font-size: 15px">Nova slika:  </label>
+                              </span>
+                              <div style="display:flex; flex-direction: column;">
+                                  <input type="text" id="azurirajIdDelegata" placeholder="ID sudije"/>
+                                  <input type="text" id="azurirajUsernameDelegata" placeholder="Username"/>
+                                  <input type="text" id="azurirajPasswordDelegata" placeholder="Password" />
+                                  <input type="text" id="azurirajSlikuDelegata" placeholder="URL slike"/>
+      
+                              </div>
+                                </form>
+                                <button class="btn btn-inverse btn-medium" id="azurirajDelegata">Ažuriraj delegata</button>
+                        </div>
+                        <div class="tab-pane" id="third2">
+                            <h3><i class="icon-briefcase icon-48"></i>Ažuriranje sekretara</h3>
+                              <form style="display: flex; flex-direction: row">
+                                  <span style="display:flex; flex-direction: column">
+                                      <label style="margin: 10px; font-size: 15px">ID Sekretara:  </label> 
+                                      <label style="margin: 10px; font-size: 15px">Novi username:  </label> 
+                                      <label style="margin: 10px; font-size: 15px">Novi password:  </label>
+                                      <label style="margin: 10px; font-size: 15px">Nova slika:  </label>
+                              </span>
+                              <div style="display:flex; flex-direction: column;">
+                                  <input type="text" id="azurirajIdSekretara" placeholder="ID sudije"/>
+                                  <input type="text" id="azurirajUsernameSekretara" placeholder="Username"/>
+                                  <input type="text" id="azurirajPasswordSekretara" placeholder="Password" />
+                                  <input type="text" id="azurirajSlikuSekretara" placeholder="URL slike"/>
+      
+                              </div>
+                                </form>
+                                <button class="btn btn-inverse btn-medium" id="azurirajSekretara">Ažuriraj sekretara</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+    </section>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+      <footer>
+        <!-- <div id="sub-footer"> -->
+        <div class="container">
+          <div class="row">
+            <div class="span7">
+              <div class="copyright">
+                <p>
+                  <span
+                    >&copy; Zvanična internet prezentacija FS Niša. Trg Pavla
+                    Stojkovića 10, 18000 Niš Tel/faks:018/516-605; ©
+                    fsn.org.rs</span
+                  >
+                </p>
+                <div class="credits">
+                  Designed by <a href="#">inFiNiteMiNds</a>
+                </div>
+              </div>
+            </div>
+            <div class="span5">
+              <ul class="social-network">
+                <li>
+                  <a
+                    href="https://www.facebook.com/fsnisa/"
+                    data-placement="bottom"
+                    title="Facebook"
+                    ><i class="icon-facebook icon-square"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </footer>
+    </div>
+    <a href="#" class="scrollup"
+      ><i class="icon-chevron-up icon-square icon-32 active"></i
+    ></a>
+    <!-- javascript-->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jcarousel/jquery.jcarousel.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.nivo.slider.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/jquery.ba-cond.min.js"></script>
+    <script src="js/jquery.slitslider.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/adminFunkcije.js"></script>
+
+    <!-- Template Custom JavaScript File -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>

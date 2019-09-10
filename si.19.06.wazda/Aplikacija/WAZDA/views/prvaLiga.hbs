@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>WAZDA - Web aplikacija za delegiranje arbitara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- css -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
+    rel="stylesheet" />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+  <link href="css/jcarousel.css" rel="stylesheet" />
+  <link href="css/flexslider.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/tabela.css" rel="stylesheet" />
+
+  <!--  <link id="bodybg" href="bodybg/bg1.css" rel="stylesheet" type="text/css" />-->
+  <!-- Theme skin -->
+  <link href="skins/default.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="img/logo/FSN Logo.png" />
+</head>
+
+<body>
+  <div id="wrapper" class="boxed">
+    <!-- (+) -->
+    <div class="hidden-top">
+      <div class="hidden-top-inner container">
+        <div class="row">
+          <div class="span12" style="text-align:center">
+            <ul>
+              <li><strong>Kontaktiraj nas na:</strong></li>
+              <li>Sedište: Trg Pavla Stojkovića 10, 18000 Niš</li>
+              <li>Tel/faks: <i class="icon-phone"></i>018/516-605</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end -->
+
+    <!-- start header -->
+    <header>
+      <div class="container">
+        <!-- skriveni (+) kontakt podaci -->
+        <div id="header-hidden-link">
+          <a href="#" class="toggle-link" title="Click me you'll get a surprise"
+            data-target=".hidden-top"><i></i>Otvori</a>
+        </div>
+        <!-- end  -->
+
+        <div class="row nomargin">
+          <div class="span12">
+            <div class="headnav">
+              <ul>
+                <!-- <li><a href="#mySignup" data-toggle="modal"><i class="icon-user"></i> Sign up</a></li> -->
+                {{#if isAuthenticated}}
+                <li><a href="/logout">Odjavi se</a></li>
+                {{else}}
+                <li><a href="#mySignin" data-toggle="modal">Prijavi se</a></li>
+                {{/if}}
+              </ul>
+            </div>
+
+            <!-- PRIJAVI SE -->
+            <div id="mySignin" class="modal styled hide fade" tabindex="-1" role="dialog"
+              aria-labelledby="mySigninModalLabel" aria-hidden="true">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 id="mySigninModalLabel">Uloguj se </h4>
+              </div>
+              <div class="modal-body">
+                <div class="span6">
+                  <h4>Clan <strong>saveza</strong></h4>
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#one" data-toggle="tab"><i class="icon-flag"></i> Sudija</a></li>
+                    <li><a href="#two" data-toggle="tab"><i class="icon-user"></i>Delegat</a></li>
+                    <li><a href="#three" data-toggle="tab"><i class="icon-briefcase"></i>Sekretar</a></li>
+                    <li><a href="#four" data-toggle="tab"><i class="icon-lock"></i>Admin</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="one">
+                      <form class="form-horizontal" method="POST" action="/loginSudija">
+                        <h3><i class="icon-flag icon-48"></i>Sudija</h3>
+                        <div class="control-group">
+                          <label class="control-label" for="inputText">Korisnicko ime</label>
+                          <div class="controls">
+                            <input name="username" placeholder="Korisnicko ime">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label" for="inputSigninPassword">Šifra</label>
+                          <div class="controls">
+                            <input type="password" name="password" placeholder="Šifra">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <div class="controls">
+                            <button id="prijaviSe" class="btn">Uloguj se</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane" id="two">
+                      <form class="form-horizontal" method="POST" action="/loginDelegat">
+                        <h3><i class="icon-user icon-48"></i>Delegat</h3>
+                        <div class="control-group">
+                          <label class="control-label" for="inputText">Korisnicko ime</label>
+                          <div class="controls">
+                            <input name="username" placeholder="Korisnicko ime">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label" for="inputSigninPassword">Šifra</label>
+                          <div class="controls">
+                            <input type="password" name="password" placeholder="Šifra">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <div class="controls">
+                            <button id="prijaviSe" class="btn">Uloguj se</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane" id="three">
+                      <form class="form-horizontal" method="POST" action="/loginSekretar">
+                        <h3><i class="icon-briefcase icon-48"></i>Sekretar</h3>
+                        <div class="control-group">
+                          <label class="control-label" for="inputText">Korisnicko ime</label>
+                          <div class="controls">
+                            <input name="username" placeholder="Korisnicko ime">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label" for="inputSigninPassword">Šifra</label>
+                          <div class="controls">
+                            <input type="password" name="password" placeholder="Šifra">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <div class="controls">
+                            <button id="prijaviSe" class="btn">Uloguj se</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="tab-pane" id="four">
+                      <form class="form-horizontal" method="POST" action="/loginAdmin">
+                        <h3><i class="icon-lock icon-48"></i>Admin</h3>
+                        <div class="control-group">
+                          <label class="control-label" for="inputText">Korisnicko ime</label>
+                          <div class="controls">
+                            <input name="username" placeholder="Korisnicko ime">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <label class="control-label" for="inputSigninPassword">Šifra</label>
+                          <div class="controls">
+                            <input type="password" name="password" placeholder="Šifra">
+                          </div>
+                        </div>
+                        <div class="control-group">
+                          <div class="controls">
+                            <button id="prijaviSe" class="btn">Uloguj se</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end  -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="span4">
+            <div class="logo">
+              <a id="logoPocetna" href="http://localhost:3000/"><img src="img/fsn.jpg" alt="" class="logo"
+                  style="height:100px;" /></a>
+              <h1><strong>Fudbalski savez Niša</strong></h1>
+            </div>
+          </div>
+          <div class="span8">
+            <div class="navbar navbar-static-top">
+              <div class="navigation">
+                <nav>
+                  <ul class="nav topnav">
+                    {{#if isAuthenticated}}
+                    <li class="dropdown active">
+                      <a id="profil" href="http://localhost:3000/vratiOdredjeniProfil">Profil</a>
+                    </li>
+                    {{/if}}
+                    <li class="dropdown ">
+                      <a id="pocetna" href="http://localhost:3000/">Početna</a>
+                    </li>
+                    <li>
+                      <a id="oNama" href="http://localhost:3000/onama">O nama</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">Sudije <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a id="organizacija" href="http://localhost:3000/organizacija">Organizacija sudija</a>
+                        </li>
+                        <li>
+                          <a id="listaSudija" href="http://localhost:3000/listaSudija">Lista sudija</a>
+                        </li>
+                        <li>
+                          <a id="dokumenti" href="http://localhost:3000/dokumenta">Dokumenti</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a id="delegati" href="http://localhost:3000/delegati">Delegati</a>
+                    </li>
+                    <li class="dropdown active">
+                      <a href="#">Lige <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Prva niška liga</a></li>
+                        <li>
+                          <a id="drugaLiga" href="http://localhost:3000/drugaLiga">Druga Niška liga</a>
+                        </li>
+                        <li>
+                          <a id="mladjaLiga" href="http://localhost:3000/mladjaLiga">Mlađe kategorije</a>
+                        </li>
+                        <li>
+                          <a id="cicibani" href="http://localhost:3000/cicibani">Cicibani</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a id="tereni" href="http://localhost:3000/tereni">Tereni</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- end-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>Prva Niška liga</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li>
+                <a href="index.html"><i class="icon-home"></i></a><i class="icon-angle-right"></i>
+              </li>
+              <li>Lige<i class="icon-angle-right"></i></li>
+              <li class="active">Prva Niška liga</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <aside class="left-sidebar">
+              <div class="widget"></div>
+              <div class="widget">
+                <h5 class="widgetheading">Kategorije</h5>
+                <ul class="cat">
+                  <li>
+                    <i class="icon-angle-right"></i><a id="listaSudija2"
+                      href="http://localhost:3000/listaSudija">Sudije</a>
+                  </li>
+                  <li>
+                    <i class="icon-angle-right"></i><a id="delegati2" href="http://localhost:3000/delegati">Delegati</a>
+                  </li>
+                  <li>
+                    <i class="icon-angle-right"></i><a href="#">Prva Niška liga</a>
+                  </li>
+                  <li>
+                    <i class="icon-angle-right"></i><a id="drugaLiga2" href="http://localhost:3000/drugaLiga">Druga
+                      Niška liga</a>
+                  </li>
+                  <li>
+                    <i class="icon-angle-right"></i><a id="mladjaLiga2" href="http://localhost:3000/mladjaLiga">Mlađe
+                      kategorije</a>
+                  </li>
+                  <li>
+                    <i class="icon-angle-right"></i><a id="cicibani2" href="http://localhost:3000/cicibani">Liga
+                      cicibana</a>
+                  </li>
+                </ul>
+                <br>
+                <hr>
+                <br>
+                <form class="form-search">
+                  <span><i class="icon-search icon-32"></i><input id="pretraziUtakmice" placeholder="Type something"
+                      type="text" class="input-medium search-query" /></span>
+                </form>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">
+                  Sortiranje <strong>utakmica:</strong>
+                </h5>
+                <ul class="cat">
+                  <li>
+                    <h6>
+                      <i class="font-icon-map-marker"></i><strong>Teren:</strong>
+                    </h6>
+                    <select id="sortiranjePoTerenu"></select>
+                  </li>
+                  <li>
+                    <h6>
+                      <i class="icon-calendar"></i><strong>Datum odrzavanja: </strong>
+                    </h6>
+                    <select id="sortiranjePoDatumu"></select>
+                  </li>
+                </ul>
+              </div>
+          </div>
+          </aside>
+          <div class="span8">
+            <article>
+              <div class="ptable">
+                <h1 class="headin">Prva Niška liga</h1>
+                <table id="prvaLigaTabela"></table>
+                <div id="popKont"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+  <footer>
+    <!--sub-footer -->
+    <div class="container">
+      <div class="row">
+        <div class="span7">
+          <div class="copyright">
+            <p>
+              <span>&copy; Zvanična internet prezentacija FS Niša. Trg Pavla
+                Stojkovića 10, 18000 Niš Tel/faks:018/516-605; ©
+                fsn.org.rs</span>
+            </p>
+            <div class="credits">
+              Designed by <a href="#">inFiNiteMiNds</a>
+            </div>
+          </div>
+        </div>
+        <div class="span5">
+          <ul class="social-network">
+            <li>
+              <a href="https://www.facebook.com/fsnisa/" data-placement="bottom" title="Facebook"><i
+                  class="icon-facebook icon-square"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end -->
+  </footer>
+  </div>
+  <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-32 active"></i></a>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/jcarousel/jquery.jcarousel.min.js"></script>
+  <script src="js/jquery.fancybox.pack.js"></script>
+  <script src="js/jquery.fancybox-media.js"></script>
+  <script src="js/google-code-prettify/prettify.js"></script>
+  <script src="js/portfolio/jquery.quicksand.js"></script>
+  <script src="js/portfolio/setting.js"></script>
+  <script src="js/jquery.flexslider.js"></script>
+  <script src="js/jquery.nivo.slider.js"></script>
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/jquery.ba-cond.min.js"></script>
+  <script src="js/jquery.slitslider.js"></script>
+  <script src="js/animate.js"></script>
+  <script src="js/tabelaPrvaLiga.js"></script>
+  <script src="js/povezivanjePrveLige.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="js/custom.js"></script>
+</body>
+
+</html>

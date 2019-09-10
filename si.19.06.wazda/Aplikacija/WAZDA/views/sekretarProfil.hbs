@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>WAZDA - Web aplikacija za delegiranje arbitara</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- css -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700|Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet" />
+    <link href="css/jcarousel.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/profil.css" rel="stylesheet" />
+
+    <!-- Theme skin -->
+    <link href="skins/default.css" rel="stylesheet" />
+
+    <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
+
+
+ 
+  </head>
+
+  <body>
+    <div id="wrapper" class="boxed">
+      <!-- (+) -->
+      <div class="hidden-top">
+        <div class="hidden-top-inner container">
+          <div class="row">
+            <div class="span12" style="text-align:center">
+              <ul>
+                <li><strong>Kontaktiraj nas na:</strong></li>
+                <li>Sedište: Trg Pavla Stojkovića 10, 18000 Niš</li>
+                <li>Tel/faks: <i class="icon-phone"></i>018/516-605</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end  -->
+
+      <!--  header -->
+      <header>
+        <div class="container">
+          <!-- (+) -->
+          <div id="header-hidden-link">
+            <a
+              href="#"
+              class="toggle-link"
+              title="Click me you'll get a surprise"
+              data-target=".hidden-top"
+              ><i></i>Open</a
+            >
+          </div>
+          <!-- end  -->
+          <div class="row nomargin">
+            <div class="span12">
+              <div class="headnav">
+                <ul>
+                  <!-- <li><a href="#mySignup" data-toggle="modal"><i class="icon-user"></i> Sign up</a></li> -->
+                  <li>
+                    <a href="/logout" data-toggle="modal">Odjavi se</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="span4">
+              <div class="logo">
+                <a id="logoPocetna2" href="http://localhost:3000/"><img src="img/fsn.jpg"
+                    alt=""
+                    class="logo"
+                    style="height:100px;"
+                /></a>
+                <h1><strong>Fudbalski savez Niša</strong></h1>
+              </div>
+            </div>
+            <div class="span8">
+              <div class="navbar navbar-static-top">
+                <div class="navigation">
+                  <nav>
+                    <ul class="nav topnav">
+                        <li class="dropdown active">
+                            <a  href="#">Profil</a>
+                          </li>
+                      <li class="dropdown">
+                        <a id="pocetna3" href="http://localhost:3000/">Početna</a>
+                      </li>
+                      <li>
+                        <a id="oNama2" href="http://localhost:3000/onama">O nama</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="http://localhost:3000/listaSudija">Sudije <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a id="organizacija3" href="http://localhost:3000/organizacija">Organizacija sudija</a>
+                          </li>
+                          <li><a href="#">Lista sudija</a></li>
+                          <li><a id="dokumenti3" href="http://localhost:3000/dokumenta">Dokumenti</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a id="delegati4" href="http://localhost:3000/delegati">Delegati</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#">Lige <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a id="prvaLiga4" href="http://localhost:3000/prvaLiga">Prva niška liga</a></li>
+                          <li>
+                            <a id="drugaLiga4" href="http://localhost:3000/drugaLiga">Druga Niška liga</a>
+                          </li>
+                          <li><a id="mladjaLiga3" href="http://localhost:3000/mladjaLiga">Mlađe kategorije</a></li>
+                          <li><a id="cicibani3" href="http://localhost:3000/cicibani">Cicibani</a></li>
+                        </ul>
+                      </li>
+                      <li>
+                          <a id="tereni" href="http://localhost:3000/tereni"
+                            >Tereni</a
+                          >
+                        </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!-- end  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+
+      <section id="profilKontejner" class="container" style="max-width:1400px;">
+          <!-- Page Container -->
+        
+
+        <!-- The Grid -->
+        <div id="podaciSekretar" class="container">
+        
+          <!-- Left Column -->
+          
+            <div class="left-sidebar" style="max-width:1400px;">
+                <img id="profilnaSlika" src="./download.jpg" style="width:100%; border-radius: 50%" alt="Avatar">
+                <div >
+                  <h2 id="imeSekretara" style="margin:10px"></h2>
+                </div>
+              <div style="margin:5px">
+                <span style="display: flex;flex-direction: row; margin:20px"><i class="icon-briefcase "></i><label id="zvanjeSekretara"></label></span>
+                <span style="display: flex;flex-direction: row; margin:20px"><i class="font-icon-map-marker "></i> Nis, SRB</span>
+                <span style="display: flex;flex-direction: row; margin:20px"><i class="icon-envelope "></i><label id="emailSekretara"></label></span>
+                <span style="display: flex;flex-direction: row; margin:20px"><i class="icon-phone"></i><label id="telefonSekretara"></label></span>
+                <span style="display: flex;flex-direction: row; margin:20px"><i class="icon-user"></i><label id="usernameSekretara2"></label></span>
+                
+                <span hidden><input id="usernameSekretara"/></span>
+                <hr>
+                <br />
+                  <br />
+                  <br />
+                <button id="kreirajUtakmicu" class="btn btn-inverse btn-medium">Organizuj utakmicu</button>
+                <div id="popKont2"></div>
+                </div>
+            </div>
+            <br>
+            <br>
+      
+          <!-- End Left Column -->
+          </div>
+      
+          <!-- Right Column -->
+          <div class="right-sidebar">
+          
+            <div >
+              <div id="inner-headline" class="container row span8">
+              <h2 style="color:white"><i class="icon-user icon-48"></i>Profil</h2>
+              <div id="popKont" class="container row span4" style="float:right"><button class="btn btn-inverse btn-large" id="editProfil" style="float:right">Edit</button></div>
+              </div>
+              <div >
+                <h5 ><b>Clan fudbalskog saveza</b></h5>
+                <hr>
+              </div>
+              <div >
+                <h5><b>Ime</b></h5>
+                <h6 id="imeSekretara2"></h6>
+                <hr>
+              </div>
+              <div >
+                <h5 ><b>Prezime</b></h5>
+                <h6 id="prezimeSekretara"></h6>
+                <hr>
+              </div>
+              <div>
+                  <h5><b><i class="icon-briefcase icon-48"></i>Zvanje</b></h5>
+                  <h6 id="zvanjeSekretara2"></h6>
+                  <hr>
+              </div>
+              <div>
+                    <h5><b><i class="icon-calendar icon-48"></i>Godina rodjenja</b></h5>
+                    <h6 id="godinaRodjenja"></h6>
+                    <hr>  
+                </div>
+                <div>
+                    <h5><b><i class="icon-phone icon-48"></i>Broj telefona</b></h5>
+                    <h6 id="telefonSekretara2"></h6>
+                    <hr>  
+                </div>
+              <div>
+                    <h5><b><i class="icon-pencil icon-48"></i>Opis</b></h5>
+                    <h6 id="opisSekretara"></h6><br>
+                    <hr>
+                </div>
+            </div>
+      
+          <!-- End Right Column -->
+          </div>
+          
+        <!-- End Grid -->
+        </div>
+        
+        <!-- End Page Container -->
+      </div>
+      
+      </section>
+      <footer>
+        <!-- sub-footer -->
+        <div class="container">
+          <div class="row">
+            <div class="span7">
+              <div class="copyright">
+                <p>
+                  <span
+                    >&copy; Zvanična internet prezentacija FS Niša. Trg Pavla
+                    Stojkovića 10, 18000 Niš Tel/faks:018/516-605; ©
+                    fsn.org.rs</span
+                  >
+                </p>
+                <div class="credits">
+                  Designed by <a href="#">inFiNiteMiNds</a>
+                </div>
+              </div>
+            </div>
+            <div class="span5">
+              <ul class="social-network">
+                <li>
+                  <a
+                    href="https://www.facebook.com/fsnisa/"
+                    data-placement="bottom"
+                    title="Facebook"
+                    ><i class="icon-facebook icon-square"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+      </footer>
+    </div>
+    <a href="#" class="scrollup"
+      ><i class="icon-chevron-up icon-square icon-32 active"></i
+    ></a>
+    <!-- javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jcarousel/jquery.jcarousel.min.js"></script>
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <script src="js/jquery.fancybox-media.js"></script>
+    <script src="js/google-code-prettify/prettify.js"></script>
+    <script src="js/portfolio/jquery.quicksand.js"></script>
+    <script src="js/portfolio/setting.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/jquery.nivo.slider.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/jquery.ba-cond.min.js"></script>
+    <script src="js/jquery.slitslider.js"></script>
+    <script src="js/sekretarProfil.js"></script>
+
+    <!-- Template Custom JavaScript File -->
+    <script src="js/custom.js"></script>
+  </body>
+</html>
